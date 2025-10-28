@@ -47,6 +47,29 @@ function sumZeroWithWhilePointer(array) {
   }
 }
 
-const res = sumZeroWithLoopPointer(arr);
+// const res = sumZeroWithLoopPointer(arr);
 
-console.log("sumZeroWithPointer res =>", res);
+// console.log("sumZeroWithPointer res =>", res);
+
+function countUniqueValues(array) {
+  let first = 0;
+  let next = 1;
+
+  // while
+  while (next < array.length) {
+    if (array[first] === array[next]) {
+      next++;
+    } else {
+      array[first + 1] = array[next];
+      first++;
+      next++;
+    }
+  }
+
+  return first + 1;
+}
+
+const array = [1, 1, 2, 3, 3, 4, 8, 9];
+
+const res2 = countUniqueValues(array);
+console.log("res2", res2);
